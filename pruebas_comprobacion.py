@@ -20,7 +20,8 @@ def posicion():
             for i in matriz:
                 print i
             if a==7:
-                break            
+                break  
+            ## esto es un comentario
         posicion()
     def compro_arriba():
         a=0
