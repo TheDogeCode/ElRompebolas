@@ -17,21 +17,21 @@ def menu():
             print""
             for i in range(9):
                     matriz.append([randint(1,3)for i in range(9)])
-        for i in matriz:
+            for i in matriz:
                 print i
         if eleccion==2:
-            print"Has elegido el nivel MEDIO"
+            print"Has elegido el nivel INTERMEDIO"
             print""
             for i in range(9):
                     matriz.append([randint(1,4)for i in range(9)])
-        for i in matriz:
+            for i in matriz:
                 print i
         if eleccion==3:
             print"Has elegido el nivel DIFICIL"
             print""
             for i in range(9):
                     matriz.append([randint(1,5)for i in range(9)])
-        for i in matriz:
+            for i in matriz:
                 print i            
         if eleccion==4:
                 def tablerofijo():
@@ -68,6 +68,13 @@ def menu():
                         if e4==0:
                                 menu()
                 tablerofijo()
+        if eleccion==0:
+            print"Quieres salir del juego?"
+            print"1. Si"
+            print"2. No"
+            salir=int(raw_input())
+            if salir==2:
+                menu()
         while eleccion>6:
                 print"Esa opcion no existe"
                 menu()
