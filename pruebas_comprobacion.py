@@ -33,10 +33,6 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
             if posiciony<1:
                 print"Esa posicion no existe"
                 posicion()
-            print"La posicion escogida es:"    
-            print matriz[posiciony-1][posicionx-1]
-            a=0
-            print""
             for i in matriz:
                     print i
             print"Introduzca las coordenadas de la posicion."
