@@ -28,10 +28,10 @@ def menu():
             if y>9:
                     print"Esa posicion no existe"
                     posicion()
-            if x<0:
+            if x<1:
                     print"Esa posicion no existe"
                     posicion()
-            if y<0:
+            if y<1:
                     print"Esa posicion no existe"
                     posicion()
             
