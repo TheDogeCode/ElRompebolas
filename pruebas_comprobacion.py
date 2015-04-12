@@ -37,6 +37,8 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
             print matriz[posiciony-1][posicionx-1]
             a=0
             print""
+            for i in matriz:
+                    print i
             print"Introduzca las coordenadas de la posicion."
             print"Fila:"
             y=int(raw_input())
@@ -45,58 +47,58 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
             if x>9:
                 print"Esa posicion no existe"
                 posicion()
-                if y>9:
+            if y>9:
                     print"Esa posicion no existe"
                     posicion()
-                if x<1:
+            if x<1:
                     print"Esa posicion no existe"
                     posicion()
-                if y<1:
+            if y<1:
                     print"Esa posicion no existe"
                     posicion()
-                if x==1:
+            if x==1:
                     x=0
-                if x==2:
+            if x==2:
                     x=1
-                if x==3:
+            if x==3:
                     x=2
-                if x==4:
+            if x==4:
                     x=3
-                if x==5:
+            if x==5:
                     x=4
-                if x==6:
+            if x==6:
                     x=5
-                if x==7:
+            if x==7:
                     x=6
-                if x==8:
+            if x==8:
                     x=7
-                if x==9:
+            if x==9:
                     x=8
         
-                if y==1:
+            if y==1:
                     y=0
-                if y==2:
+            if y==2:
                     y=1
-                if y==3:
+            if y==3:
                     y=2
-                if y==4:
+            if y==4:
                     y=3
-                if y==5:
+            if y==5:
                     y=4
-                if y==6:
+            if y==6:
                     y=5
-                if y==7:
+            if y==7:
                     y=6
-                if y==8:
+            if y==8:
                     y=7
-                if y==9:
+            if y==9:
                     y=8 
     
-                print"El valor de la posicion escogida es:"    
-                print matriz[y][x]
-                valor_inicial=matriz[y][x]   
+            print"El valor de la posicion escogida es:"    
+            print matriz[y][x]
+            valor_inicial=matriz[y][x]   
    
-                def compro_abajo(y,x):
+            def compro_abajo(y,x):
                     a=0  
                     while valor_inicial==matriz[y+a][x]:
                         matriz[y+a][x]=0          
@@ -108,7 +110,7 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
                     posicion()
      
     
-                def compro_derecha():
+            def compro_derecha():
                     a=-1
                     while matriz[y-1][x-1]==matriz[y-1][x+a]:
                         matriz[y-1][x-1]=0           
@@ -120,11 +122,11 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
                             matriz[y-1][x+a]=0
                             matriz[y-1][x+a+1]=0
                             a+=1                       
-                            for i in matriz:
-                                print i 
+                            '''for i in matriz:
+                                print i''' 
                     compro_derecha()
                     posicion()
-                def compro_izquierda():
+            def compro_izquierda():
                     a=-1
                     while matriz[y-1][x-1]==matriz[y-1][x-2]:
                         matriz[y-1][x-1]=0           
@@ -139,14 +141,16 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
                             for i in matriz:
                                 print i 
                     posicion()
-                try:                       
+            for i in matriz:
+                    print i
+            try:                       
                     compro_abajo(x,y)
                         
-                except IndexError:
+            except IndexError:
                     posicion() 
-                try:                
+            try:                
                     compro_derecha(x,y)                
-                except IndexError:
+            except IndexError:
                     posicion()
             posicion()
         if eleccion==1:
