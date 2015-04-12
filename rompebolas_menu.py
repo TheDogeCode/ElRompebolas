@@ -102,6 +102,8 @@ def menu():
                 compro_abajo()
             except IndexError:
                 posicion()
+           for i in matriz
+                print i
             posicion()
         if eleccion==1:
             print"Has elegido el nivel FACIL"
