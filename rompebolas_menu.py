@@ -1,8 +1,8 @@
-import random
+import random                 #Se importan las librerias necesarias para la creacion de tableros.
 from random import randint
 ## Trabajo realizado por: Daniel Villoldo Serrano y Andres Miguel Manso
 ##Pagina de gitHub: https://github.com/villoldin/ElRompebolas
-def menu():
+def menu():    #A continuacion se daran las opciones para que el usuario elija el modo de juego.
         print"Elija el nivel del juego:"
         print"1. Facil"
         print"2. Medio"
@@ -14,14 +14,14 @@ def menu():
         a=raw_input()
         eleccion=int(a)
         matriz=[]
-        def posicion():
+        def posicion():  #Se validara la entrada pedida al usuario para que determine la posicion que desae eliminar
             print""
             print"Introduzca las coordenadas de la posicion."
             print"Fila:"
             y=int(raw_input())
             print"Columna:"
             x=int(raw_input())
-            if x==0 & y==0 :
+            if x==0 & y==0 :      #Se descartan las opciones no validas volviendoselas a pedir al usuario
                 print "PARTIDA TERMINADA POR EL JUGADOR, SALIENDO AL MENU"
                 menu()
             if x>9:
@@ -39,71 +39,73 @@ def menu():
             
             print"La posicion escogida es:"    
             print matriz[y-1][x-1]
-            def compro_abajo():
-                a=-1
+            def compro_abajo():    #Se comprueba si las posiciones inferiores son iguales a la escogida y si lo son las cambiara por un 0
+                a=-1 #Variable para que avance una posicion.
                 while matriz[y-1][x-1]==matriz[y+a][x-1]:
                     matriz[y-1][x-1]=0           
                     matriz[y+a][x-1]=0
                     print"correcto"
-                    a+=1
-                    if matriz[y+a][x-1]==matriz[y+a+1][x-1]:
+                    a+=1 #Se incrementa la variable creada anteriormente
+                    if matriz[y+a][x-1]==matriz[y+a+1][x-1]:   #Se cambia la posicion dada y las dos siguientes
                         matriz[y-1][x-1]=0
                         matriz[y+a][x-1]=0
                         matriz[y+a+1][x-1]=0
                         a+=1                       
                     for i in matriz:
                         print i   
-                    posicion()
-            def compro_arriba():
+                    posicion()     # Si la posicion inferior no es igual, se volvera a pedir posicion
+            def compro_arriba():  #Se comprueba si las posiciones superiores son iguales a la escogida y si lo son las cambiara por un 0
                 while matriz[y-1][x-1]==matriz[y-2][x-1]:
                     print "correcto"
-                    a=0 #Variable para que se avance la posicion
+                    a=0 
                     matriz[y-1][x-1]=0            
                     matriz[y-a][x-1]=0
                     a+=1
-                    if matriz[y-a][x-1]==matriz[y-(a+1)][x-1]:
+                    if matriz[y-a][x-1]==matriz[y-(a+1)][x-1]:   #Se cambia la posicion dada y las dos siguientes
                         matriz[y-a][x-1]=0
                         matriz[y-(a+1)][x-1]=0
                         a+=1
                     for i in matriz:
                         print i
-            def compro_derecha():
+                    posicion()   # Si la posicion superior no es igual, se volvera a pedir posicion
+            def compro_derecha():    #Se comprueba si las posiciones de la derecha son iguales a la escogida y si lo son las cambiara por un 0
                 a=-1
                 while matriz[y-1][x-1]==matriz[y-1][x+a]:
                     matriz[y-1][x-1]=0           
                     matriz[y-1][x+a]=0
                     print"correcto"
                     a+=1
-                    if matriz[y-1][x+a]==matriz[y-1][x+a+1]:
+                    if matriz[y-1][x+a]==matriz[y-1][x+a+1]:  #Se cambia la posicion dada y las dos siguientes
                         matriz[y-1][x-1]=0
                         matriz[y-1][x+a]=0
                         matriz[y-1][x+a+1]=0
                         a+=1                       
                     for i in matriz:
                         print i 
-                    posicion()
-            def compro_izquierda():
+                    posicion()       # Si la posicion de la derecha no es igual, se volvera a pedir posicion
+            def compro_izquierda():   #Se comprueba si las posiciones de la izquierda son iguales a la escogida y si lo son las cambiara por un 0
                 a=-1
                 while matriz[y-1][x-1]==matriz[y-1][x-2]:
                     matriz[y-1][x-1]=0           
                     matriz[y-1][x-2]=0
                     print""
                     a+=1
-                    if matriz[y-1][x-2]==matriz[y-1][x-a-1]:
+                    if matriz[y-1][x-2]==matriz[y-1][x-a-1]:   #Se cambia la posicion dada y las dos siguientes
                         matriz[y-1][x-1]=0
                         matriz[y-1][x-a]=0
                         matriz[y-1][x-a-1]=0
                         a+=1                       
                     for i in matriz:
                         print i 
-                    posicion()
-            try:
+                    posicion()    # Si la posicion de la izquierda no es igual, se volvera a pedir posicion
+            try:      #Se captura el error de fuera de rango
                 compro_abajo()
             except IndexError:
                 posicion()
             for i in matriz
                 print i
             posicion()
+            #Se muestran los niveles del juego en el que los tablero seran aleatorios. Y se le pide al usuario que elija
         if eleccion==1:
             print"Has elegido el nivel FACIL"
             print""
@@ -129,7 +131,7 @@ def menu():
                 print i    
             posicion()        
         if eleccion==4:
-                def tablerofijo():
+                def tablerofijo():    # Se mostraran las opciones del tablero fijo y se le permite al usuario que elija
                         print"Elija una de las opciones del menu:"
                         print"1. Cuadrado con 3 colores."
                         print"2. Rombo con 4 colores"
@@ -166,7 +168,7 @@ def menu():
                         if e4==0:
                                 menu()
                 tablerofijo()
-        if eleccion==0:
+        if eleccion==0:   # Al usuario se le pide si quiere salir del juego
             print"Quieres salir del juego?"
             print"1. Si"
             print"2. No"
@@ -179,7 +181,7 @@ def menu():
             if salir>2:
                 print"Esa opcion no existe"
                 menu()
-        while eleccion>6:
+        while eleccion>6:   #Se eliminan las opciones que el usuario no puede elegir, y le piden que vuelva a introducirlas.
                 print"Esa opcion no existe"
                 menu()
         while eleccion<0:
