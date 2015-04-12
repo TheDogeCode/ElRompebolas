@@ -51,9 +51,9 @@ def menu():
                         matriz[y+a][x-1]=0
                         matriz[y+a+1][x-1]=0
                         a+=1                       
-                        for i in matriz:
-                            print i   
-                        posicion()
+                    for i in matriz:
+                        print i   
+                    posicion()
             def compro_arriba():
                 while matriz[y-1][x-1]==matriz[y-2][x-1]:
                     print "correcto"
@@ -65,9 +65,8 @@ def menu():
                         matriz[y-a][x-1]=0
                         matriz[y-(a+1)][x-1]=0
                         a+=1
-                    else:            
-                        for i in matriz:
-                            print i
+                    for i in matriz:
+                        print i
             def compro_derecha():
                 a=-1
                 while matriz[y-1][x-1]==matriz[y-1][x+a]:
@@ -80,9 +79,9 @@ def menu():
                         matriz[y-1][x+a]=0
                         matriz[y-1][x+a+1]=0
                         a+=1                       
-                        for i in matriz:
-                            print i 
-                        posicion()
+                    for i in matriz:
+                        print i 
+                    posicion()
             def compro_izquierda():
                 a=-1
                 while matriz[y-1][x-1]==matriz[y-1][x-2]:
@@ -95,9 +94,9 @@ def menu():
                         matriz[y-1][x-a]=0
                         matriz[y-1][x-a-1]=0
                         a+=1                       
-                        for i in matriz:
-                            print i 
-                        posicion()
+                    for i in matriz:
+                        print i 
+                    posicion()
             try:
                 compro_abajo()
             except IndexError:
