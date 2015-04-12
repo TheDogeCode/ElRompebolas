@@ -1,5 +1,7 @@
 import random
 from random import randint
+## Trabajo realizado por: Daniel Villoldo Serrano y Andres Miguel Manso
+##Pagina de gitHub: https://github.com/villoldin/ElRompebolas
 def menu():
         print"Elija el nivel del juego:"
         print"1. Facil"
