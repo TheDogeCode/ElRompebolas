@@ -19,18 +19,22 @@ def menu():
             y=int(raw_input())
             print"Columna:"
             x=int(raw_input())
+            if x==0 & y==0 :
+                print "PARTIDA TERMINADA POR EL JUGADOR, SALIENDO AL MENU"
+                menu()
             if x>9:
                 print"Esa posicion no existe"
                 posicion()
             if y>9:
                     print"Esa posicion no existe"
                     posicion()
-            if x<1:
+            if x<0:
                     print"Esa posicion no existe"
                     posicion()
-            if y<1:
+            if y<0:
                     print"Esa posicion no existe"
                     posicion()
+            
             print"La posicion escogida es:"    
             print matriz[y-1][x-1]
             def compro_abajo():
