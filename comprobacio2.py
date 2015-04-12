@@ -79,7 +79,7 @@ def posicion():
             for i in matriz:
                 print i
               
-                  
+               
     def compro_arriba(y,x):
         if y==9:
             matriz[y][x]="A"
@@ -90,12 +90,12 @@ def posicion():
                 print i
                  
     '''
-
+## PRUEBA A VER SI FUNCIONA ESTO EN LA VERSION FINAL, PERO CON LO DE COMPROBAR ABAJO   
     def compro_arriba(y,x):
         a=0  
-        while valor_inicial==matriz[y][x-a]:
-            matriz[y][x-a]=0          
-            a-=1
+        while valor_inicial==matriz[y+a][x]:
+            matriz[y+a][x]=0          
+            a+=1
             print""
             for i in matriz:
                 print i
