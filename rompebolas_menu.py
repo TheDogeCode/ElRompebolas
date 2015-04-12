@@ -102,7 +102,7 @@ def menu():
                 compro_abajo()
             except IndexError:
                 posicion()
-           for i in matriz
+            for i in matriz
                 print i
             posicion()
         if eleccion==1:
