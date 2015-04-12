@@ -44,6 +44,9 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
             y=int(raw_input())
             print"Columna:"
             x=int(raw_input())
+            if x==0 & y==0 :      #Se descartan las opciones no validas volviendoselas a pedir al usuario
+                print "PARTIDA TERMINADA POR EL JUGADOR, SALIENDO AL MENU"
+                menu()
             if x>9:
                 print"Esa posicion no existe"
                 posicion()
