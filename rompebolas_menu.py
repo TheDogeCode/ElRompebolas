@@ -44,7 +44,7 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
                 while matriz[y-1][x-1]==matriz[y+a][x-1]:
                     matriz[y-1][x-1]=0           
                     matriz[y+a][x-1]=0
-                    print"correcto"
+                    print""
                     a+=1 #Se incrementa la variable creada anteriormente
                     if matriz[y+a][x-1]==matriz[y+a+1][x-1]:   #Se cambia la posicion dada y las dos siguientes
                         matriz[y-1][x-1]=0
@@ -56,7 +56,7 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
                     posicion()     # Si la posicion inferior no es igual, se volvera a pedir posicion
             def compro_arriba():  #Se comprueba si las posiciones superiores son iguales a la escogida y si lo son las cambiara por un 0
                 while matriz[y-1][x-1]==matriz[y-2][x-1]:
-                    print "correcto"
+                    print ""
                     a=0 
                     matriz[y-1][x-1]=0            
                     matriz[y-a][x-1]=0
@@ -73,7 +73,7 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
                 while matriz[y-1][x-1]==matriz[y-1][x+a]:
                     matriz[y-1][x-1]=0           
                     matriz[y-1][x+a]=0
-                    print"correcto"
+                    print""
                     a+=1
                     if matriz[y-1][x+a]==matriz[y-1][x+a+1]:  #Se cambia la posicion dada y las dos siguientes
                         matriz[y-1][x-1]=0
@@ -100,6 +100,18 @@ def menu():    #A continuacion se daran las opciones para que el usuario elija e
                     posicion()    # Si la posicion de la izquierda no es igual, se volvera a pedir posicion
             try:      #Se captura el error de fuera de rango
                 compro_abajo()
+            except IndexError:
+                posicion()
+            try:      #Se captura el error de fuera de rango
+                compro_arriba()
+            except IndexError:
+                posicion()
+            try:      #Se captura el error de fuera de rango
+                compro_derecha()
+            except IndexError:
+                posicion()
+            try:      #Se captura el error de fuera de rango
+                compro_izquierda()
             except IndexError:
                 posicion()
             for i in matriz
