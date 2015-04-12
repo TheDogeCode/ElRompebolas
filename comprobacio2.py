@@ -91,7 +91,7 @@ def posicion():
                  
     '''
 ## PRUEBA A VER SI FUNCIONA ESTO EN LA VERSION FINAL, PERO CON LO DE COMPROBAR ABAJO   
-    def compro_arriba(y,x):
+    def compro_abajo(y,x):
         a=0  
         while valor_inicial==matriz[y+a][x]:
             matriz[y+a][x]=0          
@@ -103,7 +103,7 @@ def posicion():
         posicion()
     try:
         
-        compro_arriba(x,y)
+        compro_abajo(x,y)
         
     except IndexError:
         posicion()  
